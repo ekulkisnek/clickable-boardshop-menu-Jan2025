@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { CustomizerButton } from '@/components/ui/customizer-button';
+import skateboardImg from '@/assets/IMG_6881.jpeg';
 
 export function Customizer() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -12,37 +13,41 @@ export function Customizer() {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-black">
-      <div className="relative w-full max-w-[800px] h-[600px] mx-auto">
-        {/* Background image with proper styling */}
+      <div className="relative w-full max-w-[800px] aspect-[4/3] mx-auto">
+        {/* Background image container with responsive sizing */}
         <div 
-          className="absolute inset-0 bg-[url('https://placehold.co/800x600')] bg-cover bg-center bg-no-repeat"
-          style={{ aspectRatio: '4/3' }}
+          className="absolute inset-0 bg-center bg-no-repeat bg-contain md:bg-cover"
+          style={{ 
+            backgroundImage: `url('/src/assets/IMG_6881.jpeg')`,
+          }}
         >
-          {/* Customization buttons */}
-          <CustomizerButton
-            label="Change Deck"
-            position={{ top: '200px', left: '300px' }}
-            isSelected={selectedOption === 'deck'}
-            onClick={() => handleOptionClick('deck')}
-          />
-          <CustomizerButton
-            label="Griptape"
-            position={{ top: '250px', left: '300px' }}
-            isSelected={selectedOption === 'griptape'}
-            onClick={() => handleOptionClick('griptape')}
-          />
-          <CustomizerButton
-            label="Wheel Color"
-            position={{ top: '300px', left: '300px' }}
-            isSelected={selectedOption === 'wheels'}
-            onClick={() => handleOptionClick('wheels')}
-          />
-          <CustomizerButton
-            label="Done"
-            position={{ top: '350px', left: '300px' }}
-            isSelected={selectedOption === 'done'}
-            onClick={() => handleOptionClick('done')}
-          />
+          {/* Customization buttons with responsive positioning */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center md:block">
+            <CustomizerButton
+              label="Change Deck"
+              position={{ top: '33%', left: '37.5%' }}
+              isSelected={selectedOption === 'deck'}
+              onClick={() => handleOptionClick('deck')}
+            />
+            <CustomizerButton
+              label="Griptape"
+              position={{ top: '41.5%', left: '37.5%' }}
+              isSelected={selectedOption === 'griptape'}
+              onClick={() => handleOptionClick('griptape')}
+            />
+            <CustomizerButton
+              label="Wheel Color"
+              position={{ top: '50%', left: '37.5%' }}
+              isSelected={selectedOption === 'wheels'}
+              onClick={() => handleOptionClick('wheels')}
+            />
+            <CustomizerButton
+              label="Done"
+              position={{ top: '58.5%', left: '37.5%' }}
+              isSelected={selectedOption === 'done'}
+              onClick={() => handleOptionClick('done')}
+            />
+          </div>
         </div>
       </div>
     </div>

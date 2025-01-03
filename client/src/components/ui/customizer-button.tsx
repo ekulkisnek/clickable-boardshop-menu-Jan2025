@@ -20,14 +20,14 @@ export function CustomizerButton({
   return (
     <Button
       className={cn(
-        "absolute w-[100px] bg-black/50 hover:bg-black/70 text-white border-none",
-        "transition-colors duration-200",
+        "absolute w-24 md:w-[100px] bg-black/50 hover:bg-black/70 text-white border-none",
+        "transition-colors duration-200 transform -translate-x-1/2",
+        "text-xs md:text-sm",
         isSelected && "bg-black/70"
       )}
       style={{
         top: position.top,
         left: position.left,
-        fontSize: '14px',
         padding: '5px 10px',
       }}
       onClick={onClick}
