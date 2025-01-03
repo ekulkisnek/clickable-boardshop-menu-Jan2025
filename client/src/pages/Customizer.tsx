@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { CustomizerButton } from '@/components/ui/customizer-button';
-import skateboardImg from '@/assets/IMG_6881.jpeg';
 
 export function Customizer() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -18,7 +17,7 @@ export function Customizer() {
         <div 
           className="absolute inset-0 bg-center bg-no-repeat bg-contain md:bg-cover"
           style={{ 
-            backgroundImage: `url('/src/assets/IMG_6881.jpeg')`,
+            backgroundImage: `url(${new URL('../assets/IMG_6881.jpeg', import.meta.url).href})`,
           }}
         >
           {/* Customization buttons with responsive positioning */}
