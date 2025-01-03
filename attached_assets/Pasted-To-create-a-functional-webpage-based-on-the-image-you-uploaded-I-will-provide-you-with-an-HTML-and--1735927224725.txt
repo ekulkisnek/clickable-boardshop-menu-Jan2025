@@ -1,0 +1,82 @@
+To create a functional webpage based on the image you uploaded, I will provide you with an HTML and CSS snippet that uses your image as a background and adds clickable buttons in the exact locations. Here’s the code:
+
+Steps:
+
+	1.	Save the uploaded image as background.jpg in your project folder.
+	2.	Copy and paste the code below into an index.html file.
+	3.	Open the index.html file in a web browser.
+
+HTML Code
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Shop</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background: url('background.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        .button {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        /* Button Locations */
+        #changeDeck {
+            top: 200px;
+            left: 300px;
+            width: 100px;
+        }
+        #griptape {
+            top: 250px;
+            left: 300px;
+            width: 100px;
+        }
+        #wheelColor {
+            top: 300px;
+            left: 300px;
+            width: 100px;
+        }
+        #done {
+            top: 350px;
+            left: 300px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="changeDeck" class="button">Change Deck</button>
+        <button id="griptape" class="button">Griptape</button>
+        <button id="wheelColor" class="button">Wheel Color</button>
+        <button id="done" class="button">Done</button>
+    </div>
+</body>
+</html>
+
+Notes:
+
+	•	Replace 'background.jpg' in the background property of .container with the correct file path to your uploaded image.
+	•	Each button is placed based on approximate coordinates. You can adjust the top and left values for more precise positioning.
+
+Let me know if you need further adjustments!
